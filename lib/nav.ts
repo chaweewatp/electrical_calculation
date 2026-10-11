@@ -45,6 +45,13 @@ export const NAV: NavSection[] = [
     th: "ระบบไฟฟ้ากำลัง",
     descEn: "Three-phase, transformer and load calculations",
     descTh: "คำนวณระบบ 3 เฟส หม้อแปลง และโหลด",
+    items: [
+      {
+        href: "/power-system/voltage-drop",
+        en: "Voltage Drop (LV)",
+        th: "แรงดันตก (แรงต่ำ)",
+      },
+    ],
   },
 ];
 

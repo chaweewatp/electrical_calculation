@@ -5,6 +5,7 @@ import Link from "next/link";
 import { InputField } from "@pea-ds/react/input";
 import { Button } from "@pea-ds/react/button";
 import { Badge } from "@pea-ds/react/badge";
+import { ResultCard } from "@/components/result-card";
 import { bridgeRectifier, type BridgeRectifierResult } from "@/lib/rectifier";
 
 interface FormValues {
@@ -29,40 +30,6 @@ const num = (value: string) => {
 };
 
 const volts = (n: number) => `${n.toFixed(3)} V`;
-
-function ResultCard({
-  label,
-  value,
-  hint,
-  highlight,
-}: {
-  label: string;
-  value: string;
-  hint?: string;
-  highlight?: boolean;
-}) {
-  return (
-    <div
-      className={`rounded-[var(--pea-rounded-lg)] border p-[var(--pea-space-4)] ${
-        highlight
-          ? "bg-[var(--pea-bg-brand-section)] border-[var(--pea-border-brand)]"
-          : "bg-[var(--pea-bg-primary)] border-[var(--pea-border-secondary)]"
-      }`}
-    >
-      <p className="text-[length:var(--pea-font-size-text-sm)] text-[var(--pea-text-secondary)]">
-        {label}
-      </p>
-      <p className="mt-1 text-[length:var(--pea-font-size-text-xl)] font-[var(--pea-font-weight-semibold)]">
-        {value}
-      </p>
-      {hint ? (
-        <p className="mt-1 text-[length:var(--pea-font-size-text-xs)] text-[var(--pea-text-tertiary)]">
-          {hint}
-        </p>
-      ) : null}
-    </div>
-  );
-}
 
 export default function BridgeRectifierPage() {
   const [form, setForm] = useState<FormValues>(DEFAULTS);
